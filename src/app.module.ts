@@ -5,7 +5,9 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { PrismaModule } from './prisma/prisma.module';
 import { UserModule } from './user/user.module';
+import { AuthModule } from './auth/auth.module';
 import configuration from './config/configuration';
+import { RedisService } from './config/redis.service';
 
 @Module({
   imports: [
@@ -27,8 +29,9 @@ import configuration from './config/configuration';
     // Global modules
     PrismaModule,
     UserModule,
+    AuthModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, RedisService],
 })
 export class AppModule {}
