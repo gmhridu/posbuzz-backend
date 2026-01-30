@@ -8,14 +8,15 @@ import {
 } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 
-import { PrismaService } from 'src/prisma/prisma.service';
-import { RedisService } from 'src/config/redis.service';
+
 import { RegisterDto } from './dto/register.dto';
 import { AuthResponseDto, UserResponseDto } from './dto/auth-response.dto';
 import { LoginDto } from './dto/login.dto';
 import { ConfigService } from '@nestjs/config';
 import { JwtPayload, TokenPair } from './interfaces/jwt-payload.interface';
 import { v4 as uuidv4 } from 'uuid';
+import { PrismaService } from '@/prisma/prisma.service';
+import { RedisService } from '@/config/redis.service';
 
 @Injectable()
 export class AuthService {
