@@ -3,9 +3,9 @@ import { ConfigService } from '@nestjs/config';
 import { PassportStrategy } from '@nestjs/passport';
 import { ExtractJwt, Strategy, StrategyOptionsWithRequest } from 'passport-jwt';
 import { Request } from 'express';
-import { RedisService } from 'src/config/redis.service';
-import { PrismaService } from 'src/prisma/prisma.service';
 import { JwtPayload } from '../interfaces/jwt-payload.interface';
+import { PrismaService } from '@/prisma/prisma.service';
+import { RedisService } from '@/config/redis.service';
 
 @Injectable()
 export class JwtRefreshStrategy extends PassportStrategy(
